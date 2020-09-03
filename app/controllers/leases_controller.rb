@@ -10,8 +10,12 @@ class LeasesController < ApplicationController
   end
 
   def create
-    Lease.create(lease_params)
-    redirect_to new_lease_path
+    @lease = Lease.new(lease_params)
+    if @lease.save
+      redirect_to leases_path, notice: %q(物件を登録しました。)
+    else
+      render :new
+    end
   end
 
   def show
