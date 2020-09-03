@@ -14,6 +14,11 @@ class LeasesController < ApplicationController
     redirect_to new_lease_path
   end
 
+  def show
+    @lease = Lease.find(params[:id])
+    @closest_stations = @lease.closest_stations
+  end
+
   private
 
   def lease_params

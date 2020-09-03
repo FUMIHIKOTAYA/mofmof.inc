@@ -15,6 +15,7 @@
     <td><%= lease.address %></td>
     <td><%= lease.age %>年</td>
     <td><%= lease.note %></td>
+    <td><%= link_to %q(詳細), lease_path(lease.id) %></td>
   </tr>
 <% end %>
 </table>
