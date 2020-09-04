@@ -1,42 +1,4 @@
 <h2>物件編集</h2>
-
-<%= form_with(model: @lease, local: true) do |f| %>
-  <% if @lease.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @lease.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @lease.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= f.label :'物件名' %><br>
-  <%= f.text_field :lease_name %><br>
-  <%= f.label :'賃料' %><br>
-  <%= f.text_field :rent %>円<br>
-  <%= f.label :'住所' %><br>
-  <%= f.text_field :address %><br>
-  <%= f.label :'築年数' %><br>
-  <%= f.text_field :age %>年<br>
-  <%= f.label :'備考' %><br>
-  <%= f.text_area :note %><br>
-
-  <hr>
-
-  <%= f.fields_for :closest_stations do |cs| %>
-    <h4>最寄り駅 <%= cs.index + 1 %></h4>
-    <%= cs.label :'路線名' %><br>
-    <%= cs.text_field :route_name %><br>
-    <%= cs.label :'駅名' %><br>
-    <%= cs.text_field :station_name %><br>
-    <%= cs.label :'徒歩分数' %><br>
-    <%= cs.text_field :minute_walk %><br>
-  <% end %>
-
-  <%= f.submit %q(登録する) %>
-<% end %>
-<br>
+<%= render 'form' %>
 <%= link_to %q(詳細), lease_path %>
 <%= link_to %q(戻る), leases_path %>

@@ -1,5 +1,3 @@
-<h1>閲覧</h1>
-
 <p>物件名： <%= @lease.lease_name %></p>
 <p>賃料： <%= @lease.rent %></p>
 <p>住所： <%= @lease.address %></p>
@@ -15,4 +13,5 @@
   <p>徒歩分数 <%= closest_station.minute_walk %>分</p>
 <% end %>
 
+<%= link_to %q(編集), edit_lease_path %>
 <%= link_to %q(戻る), leases_path %>
