@@ -1,5 +1,5 @@
 class LeasesController < ApplicationController
-  before_action :set_lease, only: %i(show edit update)
+  before_action :set_lease, only: %i(show edit update destroy)
 
   def index
     @leases = Lease.all
@@ -35,6 +35,11 @@ class LeasesController < ApplicationController
     end
   end
 
+  def destroy
+    @lease.destroy
+    redirect_to leases_path, notice: %q(物件を削除しました。)
+  end
+
   private
 
   def lease_params
@@ -44,7 +49,7 @@ class LeasesController < ApplicationController
       :address,
       :age,
       :note,
-      closest_stations_attributes: %i(route_name station_name minute_walk),
+      closest_stations_attributes: %i(route_name station_name minute_walk id _destroy),
     )
   end
 
