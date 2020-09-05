@@ -1,6 +1,6 @@
 class LeasesController < ApplicationController
   before_action :set_lease, only: %i(show edit update)
-  
+
   def index
     @leases = Lease.all
   end
@@ -20,17 +20,14 @@ class LeasesController < ApplicationController
   end
 
   def show
-    @lease = Lease.find(params[:id])
     @closest_stations = @lease.closest_stations
   end
 
   def edit
-    @lease = Lease.find(params[:id])
     @lease.closest_stations.build
   end
 
   def update
-    @lease = Lease.find(params[:id])
     if @lease.update(lease_params)
       redirect_to leases_path, notice: %q(物件を編集しました。)
     else
