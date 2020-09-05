@@ -1,6 +1,6 @@
 class Lease < ApplicationRecord
   has_many :closest_stations, dependent: :destroy
-  accepts_nested_attributes_for :closest_stations, allow_destroy: true
+  accepts_nested_attributes_for :closest_stations, allow_destroy: true, reject_if: :all_blank
 
   validates :lease_name, presence: true, length: { maximum: 50 }
   validates :rent, numericality: { only_integer: true }
