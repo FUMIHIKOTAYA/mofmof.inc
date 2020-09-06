@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <h2>物件一覧</h2>
+
+  <table>
+    <tr>
+      <th>物件名</th>
+      <th>賃料</th>
+      <th>住所</th>
+      <th>築年数</th>
+      <th>備考</th>
+    </tr>
+  <% @leases.each do |lease| %>
+    <tr>
+      <td><%= lease.lease_name %></td>
+      <td><%= lease.rent.to_s(:delimited) %>円</td>
+      <td><%= lease.address %></td>
+      <td><%= lease.age %>年</td>
+      <td><%= lease.note %></td>
+      <td><%= link_to %q(詳細), lease_path(lease.id) %></td>
+      <td><%= link_to %q(編集), edit_lease_path(lease.id) %></td>
+      <td><%= link_to %q(削除), lease_path(lease.id), method: :delete, data: { confirm: %q(削除します。よろしいですか。) } %></td>
+    </tr>
+  <% end %>
+  </table>
+  <br>
+  <%= link_to %q(物件を登録する), new_lease_path %>
+</div>

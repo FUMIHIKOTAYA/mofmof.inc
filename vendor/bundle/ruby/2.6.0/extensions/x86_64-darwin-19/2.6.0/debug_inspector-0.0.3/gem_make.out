@@ -1,0 +1,15 @@
+current directory: /Users/fumihikotaya/workspace/mofmof.inc/mofmof.inc_exam/dev-exam/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/Users/fumihikotaya/.rbenv/versions/2.6.3/bin/ruby -I /Users/fumihikotaya/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20200831-28935-cvafrw.rb extconf.rb
+creating Makefile
+
+current directory: /Users/fumihikotaya/workspace/mofmof.inc/mofmof.inc_exam/dev-exam/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/fumihikotaya/workspace/mofmof.inc/mofmof.inc_exam/dev-exam/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/fumihikotaya/workspace/mofmof.inc/mofmof.inc_exam/dev-exam/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20200831-28935-8laxhi
