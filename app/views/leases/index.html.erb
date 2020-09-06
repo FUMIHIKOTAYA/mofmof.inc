@@ -11,7 +11,7 @@
 <% @leases.each do |lease| %>
   <tr>
     <td><%= lease.lease_name %></td>
-    <td><%= lease.rent %>円</td>
+    <td><%= lease.rent.to_s(:delimited) %>円</td>
     <td><%= lease.address %></td>
     <td><%= lease.age %>年</td>
     <td><%= lease.note %></td>
