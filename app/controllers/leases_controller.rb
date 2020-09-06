@@ -1,5 +1,6 @@
 class LeasesController < ApplicationController
   before_action :set_lease, only: %i(show edit update destroy)
+  before_action :set_closest_stations, only: %i(show edit update)
 
   def index
     @leases = Lease.all
@@ -55,5 +56,9 @@ class LeasesController < ApplicationController
 
   def set_lease
     @lease = Lease.find(params[:id])
+  end
+
+  def set_closest_stations
+    @closest_stations = @lease.closest_stations
   end
 end

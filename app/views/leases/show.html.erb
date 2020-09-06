@@ -6,6 +6,7 @@
   <p><span class="bold">備考</span> <%= @lease.note %></p>
 </div>
 
+<% if @closest_stations.present? %>
   <hr>
 
   <% @closest_stations.each_with_index do |closest_station, i| %>
@@ -16,5 +17,6 @@
       <p><span class="bold">徒歩分数</span> <%= closest_station.minute_walk %>分</p>
     </div>
   <% end %>
+<% end %>
 
 <%= link_to %q(編集), edit_lease_path %> | <%= link_to %q(戻る), leases_path %>
